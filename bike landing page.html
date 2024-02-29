@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamaha R1M</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Besley' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: black;">
+    <header>
+        <img class="logo" src="home_logo_yamaha.png" alt="home logo">
+        <h1 class="t">Yamaha YZF-R1M</h1>
+        <nav>
+            
+            <ul class="navbar">
+                <li><a href="#learn-more" >features</a></li>
+                <li><a href="#img">images</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>    
+    </header>
+
+    <section class="container">
+        <img class="main-image" src="beast.png" alt="Yamaha R1M">
+        <h4 style="color: grey;">Welcome to the world of Yamaha R1M - the ultimate sportbike experience.</h4>
+        <a href="#learn-more" class="btn">Learn More</a>
+    </section>
+
+    <section id="learn-more" class="container about-bike">
+        <h2 style="color: #0004e0;">Features</h2>
+        <p>
+            The Yamaha R1M is a high-performance sportbike designed for riders seeking the thrill of the track and the open road.
+            With its 998cc Crossplane 4-cylinder engine, the R1M delivers explosive power and torque, providing an exhilarating
+            riding experience at every twist of the throttle.
+        </p>
+        <p>
+            <h4 style="color: orangered;">Specifications:</h4>
+            <ul>
+                <li>998cc Crossplane 4-cylinder engine</li>
+                <li>Electronic Racing Suspension (ERS)</li>
+                <li>Quick Shift System (QSS)</li>
+                <li>Yamaha Ride Control (YRC) with multiple riding modes</li>
+                <li>Carbon fiber bodywork for reduced weight</li>
+                <li>Highly aerodynamic design for improved performance</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="container price-section">
+        <h2 style="color: #0004e0;">Price</h2>
+        <p>The Yamaha R1M is priced at $22,999 (MSRP). Please contact your local dealership for the most accurate and up-to-date pricing information.</p>
+    </section>
+
+    <section class="container image-slider">
+        <div class="slider-navigation">
+            <button onclick="prevSlide()">❮ Prev</button>
+            <button onclick="nextSlide()">Next ❯</button>
+        </div>
+        <div class="slider-inner" id="img">
+            <div class="slider-item"><img src="r1m.jpg" alt="Image 1"></div>
+            <div class="slider-item"><img src="blue.jpg" alt="Image 2"></div>
+            <div class="slider-item"><img src="color.jpg" alt="Image 3"></div>
+        </div>
+    </section>
+    <section class="container contact-section">
+        <div class="contact-info" id="contact">
+            <div>
+                <h2 style="color: orangered">Contact Information</h2>
+                <p>For inquiries and assistance, feel free to reach out:</p>
+                <p>Email: info@yamahar1m.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank" title="Facebook"></a>
+                <a href="#" target="_blank" title="Twitter"></a>
+                <a href="#" target="_blank" title="Instagram"></a>
+                <a href="#" target="_blank" title="YouTube"></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+    
+        <p>&copy; 2023 Yamaha R1M. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const sliderInner = document.querySelector('.slider-inner');
+        const sliderControls = document.querySelectorAll('.slider-control');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const translateValue = -currentIndex * 100 + '%';
+            sliderInner.style.transform = 'translateX(' + translateValue + ')';
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % 3; // 3 is the number of images
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + 3) % 3;
+            updateSlider();
+        }
+    </script>
+</body>
+</html>
